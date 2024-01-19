@@ -60,7 +60,7 @@ int main() {
   };
   core.StartDiscovery(
       "com.google.nearby.connectionsd", d_options.CompatibleOptions(),
-      d_listener, [](Status status) {
+      std::move(d_listener), [](Status status) {
         std::cout << "Discovery status: " << status.ToString() << std::endl;
       });
 

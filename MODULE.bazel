@@ -3,8 +3,20 @@
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
     module_name = "hedron_compile_commands",
-    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
     commit = "9335ff4470f3e9238e3aa81aff4b72c528e16c38",
+    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
     # Replace the commit hash (above) with the latest (https://github.com/hedronvision/bazel-compile-commands-extractor/commits/main).
     # Even better, set up Renovate and let it do the work for you (see "Suggestion: Updates" in the README).
+)
+
+bazel_dep(name = "nearby")
+
+# git_override(
+#     module_name = "nearby",
+#     commit = "42ab7703929c6e9b640efdad3a2714a394ac2034",
+#     remote = "https://github.com/bagel897/nearby.git",
+# )
+local_path_override(
+    module_name = "nearby",
+    path = "nearby",
 )
